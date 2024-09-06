@@ -1,0 +1,592 @@
+﻿<!DOCTYPE html>
+<html>
+<title>Akash Reddy</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .w3-row-padding img {
+        margin-bottom: 12px
+    }
+
+    #main {
+        margin-left: 0;
+        padding-top: 150px; /* Add padding to avoid content overlap */
+    }
+
+    @media only screen and (max-width: 600px) {
+        #main {
+            margin-left: 0;
+            padding-top: 200px; /* Adjust padding for smaller screens */
+        }
+    }
+
+    .experience-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+        .experience-container img {
+            border-radius: 50%;
+            margin-right: 20px;
+            width: 75px;
+            height: 75px;
+        }
+
+    .experience-details {
+        max-width: calc(100% - 70px);
+    }
+
+        .experience-details h5 {
+            margin: 0 0 5px 0;
+        }
+
+        .experience-details p {
+            margin: 0;
+        }
+
+    .header-content1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Center text horizontally */
+        margin-top: 20px;
+        position: relative; /* Add relative positioning */
+    }
+
+        .header-content1 img {
+            margin-top: 20px; /* Adjust margin as needed */
+            display: block;
+            max-height: 500px; /* Max height for image */
+            width: auto;
+        }
+
+    .image-fade {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%; /* Adjust height for fading effect */
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        z-index: 1; /* Ensure it overlays the image */
+    }
+
+
+    .breathing-effect {
+        animation: breathing 3s infinite;
+        position: relative;
+    }
+
+    @keyframes breathing {
+        0%, 100% {
+            box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        50% {
+            box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .w3-card {
+        border-radius: 10px; /* Make the corners round */
+        border: 1px solid #ddd; /* Add border */
+        margin: 8px; /* Add some margin between card views */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add box shadow for depth */
+        transition: box-shadow 0.3s ease;
+    }
+
+        .w3-card h3 {
+            background-color: #f1f1f1; /* Add background color for heading */
+            padding: 10px; /* Add padding for heading */
+            border-top-left-radius: 10px; /* Adjust border radius for heading */
+            border-top-right-radius: 10px; /* Adjust border radius for heading */
+            margin: 0; /* Remove default margin */
+        }
+
+        .w3-card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Adjust box shadow on hover */
+        }
+
+
+    .w3-card {
+        border-radius: 10px; /* Make the corners round */
+        border: 1px solid #ddd; /* Add border */
+        margin: 8px; /* Add some margin between card views */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Add box shadow for depth */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative; /* Ensures the z-index works */
+    }
+
+        .w3-card:hover {
+            transform: scale(1.05); /* Slightly increase the size */
+            box-shadow: 0 12px 24px 0 rgba(0,0,0,0.2); /* Adjust box shadow on hover */
+            z-index: 10; /* Bring the card to the front */
+        }
+
+    
+
+
+    .typing {
+        border-right: .1em solid #fff;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .project-section {
+        padding: 20px;
+        border-left: 5px solid #f1f1f1; /* Add a left border for emphasis */
+        margin-bottom: 20px; /* Space between projects */
+        transition: border-color 0.3s ease;
+    }
+
+        .project-section:hover {
+            border-left-color: #2196F3; /* Change border color on hover */
+        }
+
+    .project-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #2196F3; /* Project title color */
+    }
+
+    .project-description {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        color: #555; /* Project description color */
+    }
+
+    .project-technologies {
+        font-size: 0.9em;
+        color: #999; /* Technologies used color */
+    }
+
+    .project-card {
+        display: none; /* Initially hidden */
+        padding: 15px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    .project-section:hover .project-card {
+        display: block; /* Show on hover */
+    }
+
+
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: black;
+        padding: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Styling for education details */
+    .w3-container {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+        .w3-container h5 {
+            margin-top: 0;
+        }
+
+        .w3-container p {
+            margin-bottom: 0;
+        }
+
+    /* Margin between education details */
+    .w3-margin-bottom {
+        margin-bottom: 20px;
+    }
+
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px); /* Adjust the translate value for a subtle upward motion */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-in {
+        opacity: 0; /* Start hidden */
+        animation: fadeIn ease-in 1; /* Use the fadeIn animation */
+        animation-fill-mode: forwards; /* Keep the final state of the animation */
+        animation-duration: 1s; /* Duration of the animation */
+        animation-delay: 0.5s; /* Delay before the animation starts */
+    }
+
+    .header-title {
+        font-size: 2em;
+        color: white;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: white;
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: all 0.3s ease-in-out;
+            }
+
+            .nav-links a:hover::after {
+                visibility: visible;
+                transform: scaleX(1);
+            }
+
+    .footer-text {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+</style>
+<body class="w3-black">
+
+    <div class="header fade-in">
+        <div class="header-content">
+            <div class="header-title">Akash Reddy.</div>
+            <div class="nav-links">
+                <a href="#">HOME</a>
+                <a href="#about">ABOUT</a>
+                <a href="#photos">PROJECTS</a>
+                <a href="#skills">SKILLS</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-padding-large fade-in" id="main">
+        <header class="w3-container w3-padding-32 w3-black" id="home">
+            <div class="header-content1">
+                <h1 class="w3-jumbo"><span class="w3-hide-small">Hi I'm</span> Akash Reddy.</h1>
+                <p class="typing" id="typing-text"></p>
+                <div style="position: relative; display: inline-block;" class="image-container shaky-image">
+                    <img src="D:\itsme.png" alt="boy" class="w3-image">
+                    <div class="image-fade"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64 fade-in" id="about">
+            <h2 class="w3-text-light-grey">About</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p>
+                I'm Akash Reddy, a 4th year student pursuing Mtech Integrated Software Engineering. With a solid foundation in software engineering principles, my passion lies in crafting immersive web experiences and developing innovative Android applications. Throughout my academic journey, I've honed my skills in web development and Android app development, leveraging technologies such as HTML, CSS, JavaScript, and Java to bring creative ideas to life. I thrive on challenges, constantly seeking opportunities to expand my knowledge and push the boundaries of what's possible in the digital realm. Let's connect and explore how my expertise can contribute to your projects and endeavors.
+            </p>
+
+            <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">4+</span><br>
+                    Partners
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">4+</span><br>
+                    Projects Done
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">4+</span><br>
+                    Certifications
+                </div>
+                <div class="w3-quarter w3-section">
+                    <span class="w3-xlarge">8.97</span><br>
+                    CGPA
+                </div>
+            </div>
+
+            <a href="D:\AkashResume.pdf" class="w3-button w3-light-grey w3-padding-large w3-section">
+                <i class="fa fa-download"></i> Download Resume
+            </a>
+
+            <!-- My Skills Section -->
+            <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="skills">
+                <h2 class="w3-text-light-grey">My Skills</h2>
+                <hr style="width:200px" class="w3-opacity">
+
+                <!-- Card Views Container -->
+                <div class="w3-row-padding">
+
+                    <!-- Technologies Card View -->
+                    <div class="w3-half w3-padding">
+                        <div class="w3-card w3-white w3-round-large">
+                            <h3><i class="fa fa-desktop"></i> Tech Stack</h3>
+                            <ul>
+                                <li>Web Development</li>
+                                <li>Android Development</li>
+                                <li>Machine Learning</li>
+                                <li>Data Analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Programming Languages Card View -->
+                    <div class="w3-half w3-padding">
+                        <div class="w3-card w3-white w3-round-large">
+                            <h3><i class="fa fa-code"></i> Programming Languages</h3>
+                            <ul>
+                                <li>Java</li>
+                                <li>Python</li>
+                                <li>C,C++</li>
+                                <li>JavaScript</li>
+                                <li>Ruby</li>
+                                <li>PHP</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tools Card View -->
+                    <div class="w3-half w3-padding">
+                        <div class="w3-card w3-white w3-round-large">
+                            <h3><i class="fa fa-wrench"></i> Tools</h3>
+                            <ul>
+                                <li>Git Hub</li>
+                                <li>Visual Studio Code</li>
+                                <li>Android Studio</li>
+                                <li>Hadoop</li>
+                                <li>AWS</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills Card View -->
+                    <div class="w3-half w3-padding">
+                        <div class="w3-card w3-white w3-round-large">
+                            <h3><i class="fa fa-users"></i> Soft Skills</h3>
+                            <ul>
+                                <li>Communication</li>
+                                <li>Teamwork</li>
+                                <li>Problem Solving</li>
+                                <li>Time Management</li>
+                                <li>Adaptability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <h3 class="w3-padding-16 w3-text-light-grey">My Education</h3>
+
+            <!-- Present Education -->
+            <div class="w3-container w3-card w3-white w3-margin-bottom">
+                <h5 class="w3-opacity"><b>M.Tech Integrated Software Engineering</b></h5>
+                <p>Vellore Institute of Technology, Chennai, India</p>
+                <p><i class="fa fa-calendar fa-fw w3-margin-right"></i>2021 - Present</p>
+            </div>
+
+            <!-- 12th Grade -->
+            <div class="w3-container w3-card w3-white w3-margin-bottom">
+                <h5 class="w3-opacity"><b>12th Grade</b></h5>
+                <p>Sri Viswasanthi Junior College, Vijayawada, Andhrapradesh</p>
+                <p><i class="fa fa-calendar fa-fw w3-margin-right"></i>2020 - 2021</p>
+                <p>Score: 95.6%</p>
+            </div>
+
+            <!-- 10th Grade -->
+            <div class="w3-container w3-card w3-white">
+                <h5 class="w3-opacity"><b>10th Grade</b></h5>
+                <p>Sri Chaitanya School, Dachepalli, Andhrapradesh</p>
+                <p><i class="fa fa-calendar fa-fw w3-margin-right"></i>2018 - 2019</p>
+                <p>Score:95%</p>
+            </div>
+
+
+
+            <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="experience">
+                <h2 class="w3-text-light-grey">My Experience</h2>
+                <hr style="width:200px" class="w3-opacity">
+
+                <div class="experience-container">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQH_bkHrF8c3DQ/article-cover_image-shrink_600_2000/0/1693589434863?e=2147483647&v=beta&t=yUJOTz8OrroQGNb__UzpHE7iQMA5gLQcz-IC5gj5--8" alt="Company 1">
+                    <div class="experience-details">
+                        <h5>Andoid app developer</h5>
+                        <h5>CodSoft</h5>
+                        <p>Duration: August 2023-September 2023</p>
+                    </div>
+                </div>
+
+                <div class="experience-container">
+                    <img src="https://static.wixstatic.com/media/db7cd5_f6b26ca89c804fbcb3b3732fd1e012f1~mv2.png/v1/fill/w_560,h_574,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Image-empty-state.png" alt="Company 2">
+                    <div class="experience-details">
+                        <h5>Design Team member</h5>
+                        <h5>Linux Club</h5>
+                        <p>February 2023-present</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Projects Section -->
+        <div class="w3-padding-64 w3-content w3-text-grey" id="photos">
+            <h2 class="w3-text-light-grey">Projects</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <!-- MetroGo Project -->
+            <div class="project-section">
+                <a href="https://github.com/vinothkanna273/Metro-Go" target="_blank"<h3 class="project-title">MetroGo</h3></a>
+                <p class="project-description">Developed a dynamic metro booking management system.</p>
+                <p class="project-technologies">Technologies: HTML, CSS, JavaScript,Java,MySql</p>
+                <div id="metrogo-card" class="project-card">
+                    <p>Metro Go web application is for users who wish to avail the metro facilities in many places of India. The intention of this application is to reduce the queue at ticket counters. The approximate amount of routes available, approximate cost, online booking, past bookings and much more. Through the displayed routes, the user gets a clear-cut information about the stations the metro passes through and where the user tends to travel. Based on users request it is possible to proceed to ticket booking and users details are thus stored in the database from where ticket details can be obtained. This is the place where user can view and book tickets of different state's metro in single portal.</p>
+                </div>
+            </div>
+
+            <!-- Wheelzy Project -->
+            <div class="project-section">
+                <a href="https://github.com/ReddyAkash/Wheelzy" target="_blank"<h3 class="project-title">Wheelzy</h3></a>
+                <p class="project-description">Designed a smart app that helps to book variety of bikes of our choice</p>
+                <p class="project-technologies">Technologies: Android Studio, Java , Firebase </p>
+                <div id="wheelzy-card" class="project-card">
+                    <p>Wheelzy offers a revolutionary solution for renting two-wheeled vehicles, including scooters, motorcycles, electric bikes, and bicycles. Unlike traditional ride-sharing apps, Wheelzy empowers users with the freedom of self-driven travel, unlocking endless possibilities for exploration.</p>
+                </div>
+            </div>
+
+            <!-- Secure Authentication System Using Blockchain Technology Project -->
+            <div class="project-section">
+                <a href=""<h3 class="project-title">Secure Authentication System Using Blockchain Technology</h3></a>
+                <p class="project-description">Implemented a secure and decentralized authentication system.</p>
+                <p class="project-technologies">Technologies: Blockchain, Ganache, Metamask, React</p>
+                <div id="blockchain-card" class="project-card">
+                    <p>This project introduces a cutting-edge secured authentication system leveraging Web3 blockchain technology. Traditional authentication methods are susceptible to vulnerabilities, and our solution addresses these challenges by providing a decentralized and tamper-proof authentication infrastructure. Through the use of blockchain, we aim to establish a new standard for secure user authentication across various domains.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+            <h2 class="w3-text-light-grey">Contact Me</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <div class="w3-section">
+                <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Andhra Pradesh, India</p>
+                <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 9398232370</p>
+                <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: akashreddytatiparthi@gmail.com</p>
+            </div><br>
+            <p>Let's get in touch. Send me a message:</p>
+
+            <form action="https://formspree.io/f/xnqeklqd"
+  method="POST" target="_blank">
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+                <p>
+                    <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                    </button>
+                </p>
+            </form>
+        </div>
+
+        <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+            <a href="https://www.facebook.com/akash.reddy.33671748" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+            <a href="https://www.instagram.com/akash_reddy00/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+            <a href="https://www.linkedin.com/in/akashreddy-tatiparthi-70ab56246/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+            <a href="https://github.com/ReddyAkash" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+            <div class="footer-text">
+                © 2024 Akash Reddy Tatiparthi, All Rights Reserved
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const typingText = document.getElementById("typing-text");
+        const textArray = ["I am a developer.", "I am a web and app developer."];
+        let arrayIndex = 0;
+        let charIndex = 0;
+        let currentText = "";
+        let isDeleting = false;
+
+        function typeEffect() {
+            if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                arrayIndex = (arrayIndex + 1) % textArray.length;
+            }
+
+            currentText = textArray[arrayIndex];
+            typingText.innerHTML = currentText.substring(0, charIndex) + '<span class="typing"></span>';
+
+            if (!isDeleting) {
+                if (charIndex < currentText.length) {
+                    charIndex++;
+                    setTimeout(typeEffect, 100);
+                } else {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 2000);
+                }
+            } else {
+                if (charIndex > 0) {
+                    charIndex--;
+                    setTimeout(typeEffect, 50);
+                } else {
+                    setTimeout(typeEffect, 500);
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            typeEffect();
+        });
+
+        
+            function showCard(cardId) {
+                document.getElementById(cardId).style.display = 'block';
+        }
+
+            function hideCard(cardId) {
+                document.getElementById(cardId).style.display = 'none';
+        }
+    
+
+    </script>
+
+</body>
+</html>
